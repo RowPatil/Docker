@@ -1,1 +1,31 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Build') {
+            steps {
+                // Your build steps or commands go here
+                sh 'echo "Building the project"'
+            }
+        }
+        
+        stage('Deploy') {
+            steps {
+                // Your deployment steps or commands go here
+                sh 'echo "Deploying the project"'
+            }
+        }
+    }
+    
+    post {
+        success {
+            echo 'The pipeline has succeeded!'
+            // Additional success actions can be added here
+        }
+        failure {
+            echo 'The pipeline has failed!'
+            // Additional failure actions can be added here
+        }
+    }
+}
 
